@@ -1,19 +1,120 @@
-*, html {
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Lobster&display=swap');
+
+
+html, body, * {
     margin: 0;
     padding: 0;
+    background-color: #788cdc;
 }
 
-header,
-footer {
-    text-align: center;
+html {
     position: relative;
+    min-height: 100%;
+}
+
+header {
+    background-color: #6070b0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    background-color: #6070b0;
+    color: white;
+    font-family: 'Caveat';
+    font-size: 3em;
 }
 
 main {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-top: 50px;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 150px;
+}
+
+.menu {
+    height: 310px;
+    width: 150px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    background-color: #3c466e;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#color {
+    align-self: center;
+    border-radius: 40px;
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #303030;
+    border: 1px solid white;
+}
+
+input::-webkit-color-swatch {
+    border: none;;
+}
+
+.btn {
+    border-radius: 15px;
+    height: 35px;
+    background-color: white;
+    box-shadow: 2px 1px 2px gray;
+    margin: 4px 10px 4px 10px;
+}
+
+.reset {
+    background-color: #ff6961;
+    color: white;
+}
+
+.black:active,
+.rgb:active,
+.eraser:active,
+.reset:active {
+    box-shadow: 0 0 0 white;
+    margin: 6px 10px 2px 10px;  
+}
+
+.selected {
+    background-color: #444444;
+    color: white;
+}
+
+#range {
+    margin: 10px 0 10px 0;
+    background: white;
+    border-radius: 8px;
+    height: 7px;
+    align-self: center;
+    width: 90%;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    width: 15px;
+    -webkit-appearance: none;
+    height: 15px;
+    background: #222222;
+    border-radius: 10px;
+}
+
+#rangeValue {
+    margin-top: 10px;
+    color: white;
+    background-color: transparent;
+    margin-top: -2px;
+    align-self: center;
 }
 
 #container {
@@ -29,4 +130,17 @@ main {
     height: auto;
     width: auto;
     border: 1px solid #303030;
+}
+
+footer {
+    display: flex;
+    height: 100px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #6070b0;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    transform: translate(-50, -50);
 }

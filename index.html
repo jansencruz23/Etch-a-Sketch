@@ -13,18 +13,19 @@
     </header>
     <main>
         <div class="menu">
-            <button class="reset btn">Reset</button>
-            <button class="black btn">Black</button>
+            <input id="color" type="color" value="#303030">
+            <button class="black btn selected">Black</button>
             <button class="rgb btn">RGB</button>
-            <input id="color" type="color">
+            <button class="eraser btn">Eraser</button>
+            <button class="reset btn">Reset</button>
             <input id="range" type="range" min="1" max="64" value="16">
-            <output id="rangeValue">16</output>
+            <output id="rangeValue">16 x 16</output>
         </div>
         
         <div id="container"></div>
     </main>
     <footer>
-        
+        Copyright &#169; 2023 Jansen C. Cruz
     </footer>
 
     <script src="main.js" type="text/javascript" defer></script>
