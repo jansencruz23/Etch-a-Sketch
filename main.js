@@ -10,6 +10,7 @@ const color = document.querySelector("#color");
 
 let div = document.createElement("p");
 let isRgb = false;
+let isCustomColor = false;
 
 range.addEventListener('input', () => {
     rangeOutput.textContent = `${range.value} x ${range.value}`;
@@ -18,14 +19,17 @@ range.addEventListener('input', () => {
 
 rgb.addEventListener('click', () => {
     isRgb = true;
+    isCustomColor = false;
 });
 
 color.addEventListener('change', () => {
-    changeDimension(range.value, color.value);
+    isCustomColor = true;
+    isRgb = false;
 });
 
 black.addEventListener('click', () => {
     isRgb = false;
+    isCustomColor = false;
 });
 
 function generateRandomColor(){
@@ -46,7 +50,7 @@ reset.addEventListener('click', () => {
 });
 
 function changeDimension(cells, color = "#303030"){
-    resetDimension();
+    container.innerHTML = "";
     for(let i = 1; i <= (cells * cells); i++){
         const div = document.createElement("div");
         div.style.backgroundColor = "white";
@@ -56,6 +60,10 @@ function changeDimension(cells, color = "#303030"){
                 div.style.backgroundColor = generateRandomColor();
             }else{
                 div.style.backgroundColor = color;
+            }
+
+            if(isCustomColor){
+                div.style.backgroundColor = customColor();
             }
             
         });
@@ -65,23 +73,8 @@ function changeDimension(cells, color = "#303030"){
     }
 }
 
-function changeColor(){
-    for(let i = 1; i <= (cells * cells); i++){
-        const div = document.createElement("div");
-        div.style.backgroundColor = "white";
-    
-        div.addEventListener('mouseover', () => {
-            if(isRgb){
-                div.style.backgroundColor = generateRandomColor();
-            }else{
-                div.style.backgroundColor = color;
-            }
-            
-        });
-        container.style.gridTemplateColumns = `repeat(${cells}, 1fr)`;
-        container.style.gridTemplateRows = `repeat(${cells}, 1fr)`;
-        container.appendChild(div);
-}
+function customColor() {
+    return color.value;
 }
 
 function resetDimension() {
