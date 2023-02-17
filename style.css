@@ -144,3 +144,17 @@ footer {
     bottom: 0;
     transform: translate(-50, -50);
 }
+
+
+@media (max-width: 850px) {
+    main {
+      margin: 10px 10px 110px 10px;
+      gap: 10px;
+    }
+  
+    #container div {
+        height: auto;
+        width: auto;
+        border: 1px solid #303030;
+    }
+}
